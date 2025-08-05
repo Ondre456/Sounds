@@ -4,16 +4,19 @@ using UnityEngine.Audio;
 
 public class StopSoundButton : MonoBehaviour
 {
-    [SerializeField] private AudioMixerGroup _mixer;
-    [SerializeField] private List<AudioSource> _buttonAudioSources;
+    private const float MinVolume = -80;
+    private const float MaxVolume = 0;
 
+    [SerializeField] private AudioMixerGroup _mixer;
+
+    private List<AudioSource> _buttonAudioSources;
     private bool _isOn = true;
 
     public void OnClick()
     {
         if (_isOn)
         {
-            _mixer.audioMixer.SetFloat("MasterVolume", -80);
+            _mixer.audioMixer.SetFloat("MasterVolume", MinVolume);
 
             foreach (AudioSource source in _buttonAudioSources)
             {
@@ -24,7 +27,7 @@ public class StopSoundButton : MonoBehaviour
         }
         else
         {
-            _mixer.audioMixer.SetFloat("MasterVolume", 0);
+            _mixer.audioMixer.SetFloat("MasterVolume", MaxVolume);
             _isOn = true;
         }
     }
