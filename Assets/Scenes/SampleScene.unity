@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 80545174}
   - component: {fileID: 80545173}
   - component: {fileID: 80545175}
+  - component: {fileID: 80545176}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -291,6 +292,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad4a0ae045b8974ca140cdfd984b8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mixer: {fileID: 24300002, guid: 6a9b94a40ad6fff408c8c64693b17b14, type: 2}
+--- !u!114 &80545176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80545171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49cebde11e30c9241a9e72db3bf1f0c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _masterVolumeSlider: {fileID: 1379713939}
+  _backgroundVolumeSlider: {fileID: 409392811}
+  _buttonsVolumeSlider: {fileID: 175663853}
   _mixer: {fileID: 24300002, guid: 6a9b94a40ad6fff408c8c64693b17b14, type: 2}
 --- !u!1 &91790775
 GameObject:
@@ -606,19 +623,7 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 80545175}
-        m_TargetAssemblyTypeName: AudioVolumePanel, Assembly-CSharp
-        m_MethodName: ChangeButtonsVolume
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &346045401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,19 +1123,7 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 80545175}
-        m_TargetAssemblyTypeName: AudioVolumePanel, Assembly-CSharp
-        m_MethodName: ChangeBackgroundVolume
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &481803520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,7 +1486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 567a6381a8ec1d94d96498aedafdf889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mixer: {fileID: 0}
+  _mixer: {fileID: 24300002, guid: 6a9b94a40ad6fff408c8c64693b17b14, type: 2}
 --- !u!1 &608036245
 GameObject:
   m_ObjectHideFlags: 0
@@ -3301,19 +3294,7 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 80545175}
-        m_TargetAssemblyTypeName: AudioVolumePanel, Assembly-CSharp
-        m_MethodName: ChangeMasterVolume
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1520094476
 GameObject:
   m_ObjectHideFlags: 0
