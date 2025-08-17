@@ -42,22 +42,23 @@ public class AudioMixerController : MonoBehaviour
 
             _isOn = false;
 
-            foreach (MusicSwitcherButton button in _musicSwitcherButtons)
-            {
-                button.SetAvailableStatus(_isOn);
-                button.Source.Stop();
-            }
+            OffAllButtonsSounds();
         }
         else
         {
             _mixerGroup.audioMixer.SetFloat(MasterVolume, _lastMusicVolume);
             _isOn = true;
 
-            foreach (MusicSwitcherButton button in _musicSwitcherButtons)
-            {
-                button.SetAvailableStatus(_isOn);
-                button.Source.Stop();
-            }
+            OffAllButtonsSounds();
+        }
+    }
+
+    private void OffAllButtonsSounds()
+    {
+        foreach (MusicSwitcherButton button in _musicSwitcherButtons)
+        {
+            button.SetAvailableStatus(_isOn);
+            button.Source.Stop();
         }
     }
 }

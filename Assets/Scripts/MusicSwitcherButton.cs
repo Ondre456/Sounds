@@ -17,17 +17,17 @@ public class MusicSwitcherButton : MonoBehaviour
         _button.onClick.AddListener(OnClick);
     }
 
-    public void OnClick()
+    public void SetAvailableStatus(bool status)
+    {
+        _canSwitch = status;
+    }
+
+    private void OnClick()
     {
         if (_canSwitch)
         {
             Source.Play();
         }
-    }
-
-    public void SetAvailableStatus(bool status)
-    {
-        _canSwitch = status;
     }
 }
 
