@@ -3,11 +3,6 @@ using UnityEngine.Audio;
 
 public class AudioMixerController : MonoBehaviour
 {
-    private const string AudioMixerName = "AudioMixer";
-    private const string MasterGroupName = "Master";
-    private const string MasterVolume = "MasterVolume";
-    private const string BackgroundVolume = "BackgroundVolume";
-    private const string ButtonsVolume = "ButtonsVolume";
     private const float MinVolume = -80;
     private const float MaxVolume = 0;
 
@@ -19,6 +14,9 @@ public class AudioMixerController : MonoBehaviour
 
     private void Awake()
     {
+        const string AudioMixerName = "AudioMixer";
+        const string MasterGroupName = "Master";
+
         _audioMixer = Resources.Load<AudioMixer>(AudioMixerName);
         var groups = _audioMixer.FindMatchingGroups(MasterGroupName);
         
@@ -37,6 +35,8 @@ public class AudioMixerController : MonoBehaviour
 
     public void SwitchMusic()
     {
+        const string MasterVolume = "MasterVolume";
+        
         if (_isOn)
         {
             _mixerGroup.audioMixer.GetFloat(MasterVolume, out _lastMusicVolume);

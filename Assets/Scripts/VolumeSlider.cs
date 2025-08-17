@@ -13,6 +13,16 @@ public class VolumeSlider : MonoBehaviour
     {
         _audioMixerController = FindObjectOfType<AudioMixerController>();
         _slider = GetComponent<Slider>();
-        _slider.onValueChanged.AddListener((value) => _audioMixerController.ChangeVolume(value, _volumeGroupName));
+        _slider.onValueChanged.AddListener(ChangeValue);
+    }
+
+    private void OnDisable()
+    {
+        _slider.onValueChanged.RemoveListener(ChangeValue);
+    }
+
+    private void ChangeValue(float value)
+    {
+        _audioMixerController.ChangeVolume(value, _volumeGroupName);
     }
 }

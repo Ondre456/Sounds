@@ -20,6 +20,7 @@ public class MusicSwitcherButton : MonoBehaviour
     public void SetAvailableStatus(bool status)
     {
         _canSwitch = status;
+        _button.interactable = status;
     }
 
     private void OnClick()
